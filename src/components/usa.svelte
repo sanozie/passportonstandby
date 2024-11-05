@@ -1,20 +1,21 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount } from 'svelte'
+	import { party } from '@utils/color'
 
-	let { id = $bindable(), name = $bindable(), elements = $bindable() } = $props();
+	let { id = $bindable(), name = $bindable(), elements = $bindable(), selections } = $props();
+
+	let previousState = $state(null)
 
 	const select = e => {
 		id = e?.target?.dataset?.id ?? null
 		name = e?.target?.dataset?.name ?? null
-		// if (e?.target?.dataset?.id) {
-		// 	for (let element of document.querySelectorAll("#usa > path")) {
-		// 		element.style.removeProperty('filter')
-		// 		element.style.removeProperty('transform')
-		// 	}
-		//
-		// 	e.target.style.filter = "drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))"
-		// 	e.target.style.transform = "scale(1.01)"
-		// }
+		if (e?.target?.dataset?.id) {
+			if (previousState) {
+				previousState.style.fill = party[selections[previousState.dataset.id]] ?? "#ffffff"
+			}
+			e.target.style.fill = "#777777"
+			previousState = e.target
+		}
 	}
 
 	onMount(() => {

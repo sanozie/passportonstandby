@@ -63,7 +63,7 @@
 		<h1 class="font-black text-3xl md:text-5xl title">Select a state</h1>
 	</div>
 	<div class="flex flex-row bg-white w-full justify-center col-span-full row-span-full">
-		<USA bind:id={id} bind:name={name} bind:elements={states} on:click={clear}/>
+		<USA bind:id={id} bind:name={name} bind:elements={states} selections={selections} on:click={clear}/>
 	</div>
 	{#if id}
 		<div in:send={{key: id}} out:receive={{key: id}} class="flex flex-row w-full justify-center p-5 sm:p-10 col-span-full row-span-full" >
