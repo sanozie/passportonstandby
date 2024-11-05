@@ -15,7 +15,10 @@ const config = {
 		alias: {
 			'@assets': './src/assets',
 			'@components': './src/components',
-			'@utils': './src/utils'
+			'@utils': './src/utils',
+			'@models': './src/models',
+			'@store': './src/store',
+			'@hooks': './src/hooks'
 		}
 	}
 };
