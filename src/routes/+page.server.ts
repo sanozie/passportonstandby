@@ -3,7 +3,7 @@ import { connect, disconnect } from '$lib/server/mongo';
 import { User } from '@models/user.model';
 
 export const actions: Actions = {
-	login: async (event) => {\
+	login: async (event) => {
 		console.log('inside login')
 		const data = await event.request.formData()
 		const name = data.get('name')?.toString()

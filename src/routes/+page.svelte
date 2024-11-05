@@ -41,8 +41,6 @@
 					</div>
 					<button class="text bg-black rounded-md px-5 py-2 font-bold text-white text-sm">LOG IN</button>
 				</div>
-
-
 			</div>
 		</form>
 	</div>
