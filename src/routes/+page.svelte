@@ -10,7 +10,7 @@
 
 	onMount(() => {
 		console.log('uid exists')
-		if ($uid) goto('/game')
+		if ($uid && $uid != 'undefined') goto('/game')
 	})
 
 	let { form }: { form: ActionData } = $props();
