@@ -58,7 +58,7 @@
 	)
 </script>
 
-<div class="flex flex-col h-full w-full centerize">
+<div class="flex flex-col h-full w-full centerize max-w-screen-md">
 	<div class="flex flex-row justify-center pt-10 bg-white w-full col-span-full row-span-full">
 		<h1 class="font-black text-3xl md:text-5xl title">Select a state</h1>
 	</div>
