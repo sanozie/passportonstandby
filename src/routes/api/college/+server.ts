@@ -8,7 +8,7 @@ export const POST = (async ({ request }) => {
 	if (!id) throw new Error('Request without id')
 
 	await connect()
-	await User.findOneAndUpdate({ _id: id}, { college: entries })
+	await User.findOneAndUpdate({ _id: id}, { college: entries, timestamp: new Date() })
 	await disconnect()
 
 

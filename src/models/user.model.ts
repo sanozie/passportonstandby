@@ -9,7 +9,8 @@ export interface UserModel {
 const UserSchema = new mongoose.Schema(
 	{
 		name: String,
-		college: Object
+		college: Object,
+		timestamp: Date
 	},
 	{ collection: 'user' }
 )
