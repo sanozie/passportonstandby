@@ -28,9 +28,9 @@
 	})
 </script>
 
-<div class="flex flex-row justify-center centerize w-full h-full">
+<div class="flex flex-row justify-center centerize w-full h-full px-10">
 	<div class="flex flex-col">
-		<h1 class="title text-5xl">Passport on Standby</h1>
+		<h1 class="title text-5xl text-center">Passport on Standby</h1>
 		<form method="POST" action="?/login" use:enhance>
 			<div class="flex flex-row justify-center">
 				<div class="flex flex-col">
