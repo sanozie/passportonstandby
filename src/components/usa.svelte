@@ -2,19 +2,21 @@
 	import { onMount } from 'svelte'
 	import { party } from '@utils/color'
 
-	let { id = $bindable(), name = $bindable(), elements = $bindable(), selections } = $props();
+	let { id = $bindable(), name = $bindable(), elements = $bindable(), selections = {}, interactive = true } = $props();
 
 	let previousState = $state(null)
 
 	const select = e => {
 		id = e?.target?.dataset?.id ?? null
 		name = e?.target?.dataset?.name ?? null
-		if (e?.target?.dataset?.id) {
-			if (previousState) {
-				previousState.style.fill = party[selections[previousState.dataset.id]] ?? "#ffffff"
+		if (interactive) {
+			if (e?.target?.dataset?.id) {
+				if (previousState) {
+					previousState.style.fill = party[selections[previousState.dataset.id]] ?? "#ffffff"
+				}
+				e.target.style.fill = "#777777"
+				previousState = e.target
 			}
-			e.target.style.fill = "#777777"
-			previousState = e.target
 		}
 	}
 
@@ -22,6 +24,8 @@
 		const states = document.querySelectorAll("#usa > path");
 		elements = [ ...states].reduce((a, v) => ({ ...a, [v.dataset.id]: v }), {})
 	})
+
+
 </script>
 
 <div class="w-full max-h-[50vh] max-w-[90vw] pr-10">

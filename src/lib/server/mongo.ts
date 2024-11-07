@@ -17,7 +17,7 @@ export const connect = async () => {
 	}
 
 	await mongoose.connect(MONGODB_URI ?? '', {
-		dbName: NODE_ENV === 'production' ? 'prod' : 'dev',
+		dbName: NODE_ENV === 'production' ? 'prod' : 'prod',
 	})
 	mongoConnection.isConnected = 1
 };
