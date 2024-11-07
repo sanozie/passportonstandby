@@ -17,9 +17,7 @@
 	let repFocus = $state(false)
 	let selections = $state($college)
 
-	if (!$uid || $uid === '' || $uid === 'undefined') {
-		goto('/')
-	}
+	goto('/')
 
 
 	const dem = () => {

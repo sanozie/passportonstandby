@@ -8,11 +8,6 @@
 
 	console.log('entering page')
 
-	onMount(() => {
-		console.log('uid exists')
-		if ($uid && $uid != 'undefined') goto('/game')
-	})
-
 	let { form }: { form: ActionData } = $props();
 
 	let progress: Promise<unknown> | undefined
